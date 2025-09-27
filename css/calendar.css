@@ -8,18 +8,19 @@
 	border-radius: 0;
 	box-sizing: content-box;
 	margin: 0;
+	background: hsl(218, 20%, 92%);
 }
 /* Used to indicate the current day in the grid. */
 #main_grid .calendar_today span.day_text,
-#month_grid,
+#month_grid .calendar_today,
 .calendar_week tr.days_wrapper td.calendar_today:first-child {
 	font-weight: bold;
 }
 td.days:hover {
-	background: hsla(0, 0%, 100%, 0.4);
+	background: transparent;
 }
 .calendar_today {
-    background-color: #fff;
+    background: hsl(0, 0%, 100%);
 	font-weight: bold;
  }
 #month_grid {
@@ -48,25 +49,30 @@ td.days:hover {
 	border: var(--border_width) var(--border_style) var(--border_color);
 	overflow: auto;
 }
-#main_grid .cat_bar {
+#main_grid .cat_bar, #month_grid .cat_bar {
 	border-radius: 5px 5px 0 0;
 }
 #month_grid th:first-child {
-	
-}
-#month_grid th.days {
-	
-	font-size: smaller;
-}
-#month_grid th.days,
-#month_grid td.weeks {
-	background: var(--window_bg_color);
+	background: hsl(207, 39%, 23%);
 	padding: 2px;
 	text-align: center;
+}
+#month_grid th.days {
+	font-size: smaller;
+	background: hsl(207, 39%, 23%);
+	color: hsl(0, 0%, 100%);
+	border: 1px solid hsl(0, 0%, 100%);
+}
+#month_grid td.weeks {
+	background: hsl(203, 31%, 95%);
+	padding: 2px;
+	text-align: center;
+	border: 1px solid hsl(0, 0%, 100%);
 }
 #month_grid td.weeks {
 	font-size: large;
 	width: 5%;
+	border: 1px solid hsl(0, 0%, 100%);
 }
 #month_grid td.weeks a:hover {
 	text-decoration: underline;
@@ -81,13 +87,15 @@ td.days:hover {
 	margin: -3px 4px 0 4px;
 }
 #main_grid th:first-child {
-	
+	background: hsl(207, 39%, 23%);
 }
 #main_grid th.days {
 	width: 14%;
 	padding: 5px 10px;
-	text-align: left;
-	
+	text-align: left; 
+	background: hsl(207, 39%, 23%);
+	color: hsl(0, 0%, 100%);
+	border: 1px solid hsl(0, 0%, 100%);
 }
 #main_grid td.weeks {
 	text-align: center;
@@ -107,31 +115,31 @@ td.days:hover {
 }
 #main_grid td.events,
 #month_grid td.events {
-	background: rgba(30, 245, 20, 0.1);
+	background: hsl(206, 30%, 95%);
 }
 #main_grid td.holidays,
 #month_grid td.holidays {
-	background: rgba(23, 110, 245, 0.1);
+	background: hsl(206, 30%, 95%);
 }
 #main_grid td.birthdays,
 #month_grid td.birthdays {
-	background: rgba(102, 0, 255, 0.1);
+	background: hsl(206, 30%, 95%);
 }
 /* Special Case Highlighting */
 #main_grid td.events:hover,
 #month_grid td.events:hover,
 #month_grid td.calendar_today.events {
-	background: rgba(30, 245, 20, 0.2);
+	background: hsl(206, 30%, 95%);
 }
 #main_grid td.holidays:hover,
 #month_grid td.holidays:hover,
 #month_grid td.calendar_today.holidays {
-	background: rgba(23, 110, 245, 0.2);
+	background: hsl(206, 30%, 95%);
 }
 #main_grid td.birthdays:hover,
 #month_grid td.birthdays:hover,
 #month_grid td.calendar_today.birthdays {
-	background: rgba(153, 51, 255, 0.2);
+	background: hsl(206, 30%, 95%);
 }
 #main_grid td.days,
 #month_grid td.days {
@@ -139,7 +147,6 @@ td.days:hover {
 	text-align: left;
 	border-right: var(--border_width) var(--border_style) var(--border_color);
 	border-bottom: var(--border_width) var(--border_style) var(--border_color);
-	background: hsl(218, 20%, 92%);
 }
 #main_grid td.days {
 	padding: 5px;
@@ -152,10 +159,11 @@ td.days:hover {
 #month_grid td.days a {
 	display: block;
 	padding: 5px;
+	border: 1px solid hsl(0, 0%, 100%);
 }
 #month_grid td.days a:hover {
 	text-decoration: none;
-	background: rgba(97, 135, 166, 0.2);
+	background: none;
 }
 #main_grid tbody tr:nth-child(2) td.days,
 #month_grid tbody tr:nth-child(2) {
@@ -170,10 +178,10 @@ td.days:hover {
 }
 #main_grid table:last-child td.weeks {
 	border-bottom: var(--border_width) var(--border_style) var(--border_color);
+	background: hsl(206, 30%, 95%);
 }
 #main_grid tr:not(.days_wrapper) th,
 #main_grid tr:not(.days_wrapper) td {
-	background: var(--window_bg_color);
 	min-height: 30px;
 }
 #calendar_range,
@@ -257,6 +265,7 @@ span.hidelink {
 	hyphens: auto;
 	word-wrap: break-word; /* IE fallback */
 	overflow-wrap: break-word;
+	border: 1px solid hsl(0, 0%, 100%);
 }
 
 /* At less than 1024px wide, #main_grid needs all the space it can get */
